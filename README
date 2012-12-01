@@ -1,0 +1,13 @@
+README file
+
+Project:
+Litigation Scripts
+
+Description:
+I use these files to track and evaluate document productions produced in the course of litigation.
+
+Procedure:
+When a production comes in, I usually run the standard report (report_opt.sh) and then the first page report (opt).  
+After that I upload it to the ec2 instance.  
+Once the file is loaded in the NSF connected folder (/lanier), I run the tiff to pdf conversion script, calling Swaylaw's Java library.
+It is then loaded into Swaylaw's review platform, Compel.
