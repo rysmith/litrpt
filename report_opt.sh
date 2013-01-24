@@ -8,7 +8,7 @@
 #generates a unique file name
 #generates a unique production report number 
 
-opt_filepath="$1"
+opt_filepath=`find . -maxdepth 3 -type f | grep -i opt$`
 output=`date +%s`_report.txt
 output_title=`date +%s`
 
