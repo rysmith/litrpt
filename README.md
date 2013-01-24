@@ -1,4 +1,4 @@
 litrpt
 ======
 
-a suite of shell script to analyze litigation document productions
+a suite of shell scripts to analyze litigation document productions
