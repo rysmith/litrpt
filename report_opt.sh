@@ -6,7 +6,7 @@
 
 #finds the load file, in this case the .opt file
 #generates a unique file name
-#generates a unique production report number 
+#generates a unique production report number
 
 opt_filepath=`find . -maxdepth 3 -type f | grep -i opt$`
 output=`date +%s`_report.txt
@@ -20,7 +20,7 @@ read name
 echo "When did you receive this production?"
 read date_received
 
-echo "Great! Thanks for the input.  Generating report..." 
+echo "Great! Thanks for the input.  Generating report..."
 
 #opens the output file for writing on FI 5
 exec 5>~/Desktop/$output
@@ -35,7 +35,7 @@ echo "Pages Produced - Load File (.tif): " `grep -i tif "$opt_filepath" | wc -l`
 echo "Pages Produced - Load File (.jpg): " `grep -i jpg "$opt_filepath" | wc -l` >&5
 
 #identifies and counts file extensions
-while read line; do 
+while read line; do
 	echo ""$line" Files Produced - Directory: `find . | grep -w "$line" | wc -l`";
 done <<< "`find . | rev | cut -d '.' -f 1 | rev | sort -u | sed 's/\/.*//g' | sed '/^$/d'`" >&5
 
@@ -47,6 +47,6 @@ echo "Report Date: " `date` >&5
 #closes the output file from writing on FI 5
 exec <&-
 
-cat ~/Desktop/$output
+cat ~/Desktop/$output #this will output the report on your desktop
 
 exit

@@ -9,10 +9,10 @@ mkdir $1;
 #finds the load file, in this case the .opt file
 opt_filepath="`find . | grep -i opt$`"
 
-#general information for the cover page from user input 
+#general information for the cover page from user input
 echo "Who did this production come from?"
 read name
-echo "What is the Lanier case number (and case name)?"
+echo "What is the case number (and case name)?"
 read case_number
 echo "When was this production received?"
 read date_received
@@ -27,7 +27,6 @@ echo "Case Number: $case_number" >&5
 echo "Bates Range: `head -n 1 "$opt_filepath" | sed 's/,.*.//'`-`tail -n 1 "$opt_filepath" | sed 's/,.*.//'`" >&5
 echo "Number of Documents Produced: " `grep ,Y, "$opt_filepath" | wc -l` >&5 #.opt files delineate document breaks with "Y"
 echo "Date Received: $date_received" >&5
-echo "Please email rps@lanierlawfirm.com if you have any questions." >&5
 
 #closes the cover page file from writing on FI 5
 exec <&-
@@ -45,8 +44,8 @@ cat $1/temp2.txt
 #copies the first pages to given directory ($1)
 #check directory structure for correct cp path
 #directory paths in the load file vary from production to production.
-while read line; do 
-	cp -iv "~/Desktop/$line" $1; 
+while read line; do
+	cp -iv "~/Desktop/$line" $1; #the production needs to be stored on the desktop for this to work
 done < $1/temp2.txt;
 
 rm $1/temp1.txt $1/temp2.txt
