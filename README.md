@@ -1,6 +1,6 @@
 ## litrpt
 
-A suite of shell scripts to used to track and evaluate document productions produced in the course of litigation.  When our office received a document production, typically attorneys would want to know how many documents were received, and what type of documents.  I created these scripts so attorneys could checkout what we received within a few minutes as opposed to waiting to get the documents processed and loaded into the database (Concordance, Relativity, etc.).
+A suite of shell scripts to used to track and evaluate document productions produced in the course of litigation.  When our office received a document production, typically attorneys would want to know how many documents were received, and what type of documents.  I created these scripts so attorneys could checkout the quantity and quality of the documents we received within a few minutes as opposed to waiting to get the documents processed and loaded into the database (Concordance, Relativity, etc.).
 
 These were originally developed for use with bash, but I've also used them with cygwin.  Note some of the local file paths will need to be changed so the output files are saved in the right spot.
 
@@ -14,7 +14,7 @@ First, you'll want to check what load files have been provided with the producti
 
 The report_firstpage_*.sh scripts copy the first page of each document (a .tif file) and put them in a folder of your choosing.  The first argument is the destination directory.
 
-<pre><code>$ report_firstpage_opt.sh destination_directory</pre><code>
+`$ report_firstpage_opt.sh destination_directory`
 
 Again, you'll need to check what type of load file is provided.
 
